@@ -17,7 +17,7 @@ renderLicenseSection = (license) => {
 }
 
 // TODO: Create a function to generate markdown for README
-generateMarkdown = ({ title, tableOfContents, installation, use, license, contributions, tests, questions }) => {
+generateMarkdown = ({ title, tableOfContents, installation, use, license, contributions, tests, questions, email, username}) => {
  
   console.log(title);
 
@@ -29,6 +29,8 @@ generateMarkdown = ({ title, tableOfContents, installation, use, license, contri
   ## ${contributions},
   ## ${tests},
   ## ${questions},
+  ## ${email},
+  ## ${username},
 `
 ;
 }

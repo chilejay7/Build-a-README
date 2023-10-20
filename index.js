@@ -10,41 +10,51 @@ const questionPrompts = [
         name: 'title',
         message: "What is the title of your project?",
     },
-//     {
-//         type: 'input',
-//         name: 'tableOfContents',
-//         message: "What would you like to include in your table of contents?",
-//     },
-//     {
-//         type: 'input',
-//         name: 'installation',
-//         message: "What is the process for installing the application?",
-//     },
-//     {
-//         type: 'input',
-//         name: 'use',
-//         message: "How is the application used?",
-//     },
-//     {
-//         type: 'input',
-//         name: 'license',
-//         message: "Which license was used?",
-//     },
-//     {
-//         type: 'input',
-//         name: 'contributions',
-//         message: "Were there any contributions from other developers or sources you consulted for this application?",
-//     },
-//     {
-//         type: 'input',
-//         name: 'tests',
-//         message: "If tests were run on the application, what were they and how were they conducted?",
-//     },
-//     {
-//         type: 'input',
-//         name: 'questions',
-//         message: "Which questions does this answer?",
-//     },
+    {
+        type: 'input',
+        name: 'tableOfContents',
+        message: "What would you like to include in your table of contents?",
+    },
+    {
+        type: 'input',
+        name: 'installation',
+        message: "What is the process for installing the application?",
+    },
+    {
+        type: 'input',
+        name: 'use',
+        message: "Please describe how this application should be used.",
+    },
+    {
+        type: 'input',
+        name: 'license',
+        message: "Which license was used?",
+    },
+    {
+        type: 'input',
+        name: 'contributions',
+        message: "Were there any contributions from other developers or sources you consulted for this application?",
+    },
+    {
+        type: 'input',
+        name: 'tests',
+        message: "If tests were run on the application, what were they and how should they be conducted?",
+    },
+        {
+        type: 'input',
+        name: 'questions',
+        message: "Questions for the developer?",
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: "What is your email address where questions can be directed?",
+    },
+    {
+        type: 'input',
+        name: 'username',
+        message: "What is your github username?",
+    },
 ]
 
 // TODO: Create a function to write README file
@@ -67,7 +77,7 @@ init = async () => {
     //     return answers
     // });
 
-    const { title, tableOfContents, installation, use, license, contributions, tests, questions } = answers;
+    const { title, tableOfContents, installation, use, license, contributions, tests, questions, email, username } = answers;
 
     // console.log(title);
 
