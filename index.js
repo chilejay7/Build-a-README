@@ -71,8 +71,6 @@ init = async () => {
   const answers = await inquirer
     .prompt(questionPrompts)
 
-    const { title, tableOfContents, installation, use, license, contributions, tests, questions, email, username } = answers;
-
     await writeToFile('Sample_README.md', generateMarkdown(answers));
 
 }
