@@ -1,21 +1,57 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const genearte = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = [
-    "What is the title of your project?",
-    "What would you like to include in your table of contents?",
-    "What is the process for installing the application?",
-    "How is the application used?",
-    "Which license was used?",
-    "Which contributions or sources did you use for this application?",
-    "What are the tests?",
-    "Which questions does this answer?",
+    { 
+        type: 'input',
+        name: 'title',
+        message: "What is the title of your project?",
+    },
+    {
+        type: 'input',
+        name: 'tableOfContents',
+        message: "What would you like to include in your table of contents?",
+    },
+    {
+        type: 'input',
+        name: 'installation',
+        message: "What is the process for installing the application?",
+    },
+    {
+        type: 'input',
+        name: 'use',
+        message: "How is the application used?",
+    },
+    {
+        type: 'input',
+        name: 'license',
+        message: "Which license was used?",
+    },
+    {
+        type: 'input',
+        name: 'contributions',
+        message: "Which contributions or sources did you use for this application?",
+    },
+    {
+        type: 'input',
+        name: 'tests',
+        message: "How was this tested?",
+    },
+    {
+        type: 'input',
+        name: 'questions',
+        message:  "Which questions does this answer?",
+    },
 ];
 
 inquirer
-    .prompt(questions);
+    .prompt(questions)
+    .then((response, err) => {
+        err ? console.log(err) : console.log(response)
+    });
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
