@@ -49,12 +49,16 @@ const questions = [
 
 inquirer
     .prompt(questions)
-    .then((response, err) => {
-        err ? console.log(err) : console.log(response)
+    .then((data, err) => {
+        err ? console.log(err) : console.log(data)
+        const { title, tableOfContents, installation, use, license, contributions, tests, questions } = data
+        console.log(license);
     });
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName)
+}
 
 // TODO: Create a function to initialize app
 function init() {}
