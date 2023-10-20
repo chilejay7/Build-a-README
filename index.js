@@ -1,67 +1,80 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const genearte = require('./utils/generateMarkdown.js');
+const generate = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
-const questions = [
-    { 
+const questionPrompts = [
+    {
         type: 'input',
         name: 'title',
         message: "What is the title of your project?",
     },
-    {
-        type: 'input',
-        name: 'tableOfContents',
-        message: "What would you like to include in your table of contents?",
-    },
-    {
-        type: 'input',
-        name: 'installation',
-        message: "What is the process for installing the application?",
-    },
-    {
-        type: 'input',
-        name: 'use',
-        message: "How is the application used?",
-    },
-    {
-        type: 'input',
-        name: 'license',
-        message: "Which license was used?",
-    },
-    {
-        type: 'input',
-        name: 'contributions',
-        message: "Which contributions or sources did you use for this application?",
-    },
-    {
-        type: 'input',
-        name: 'tests',
-        message: "How was this tested?",
-    },
-    {
-        type: 'input',
-        name: 'questions',
-        message:  "Which questions does this answer?",
-    },
-];
-
-inquirer
-    .prompt(questions)
-    .then((data, err) => {
-        err ? console.log(err) : console.log(data)
-        const { title, tableOfContents, installation, use, license, contributions, tests, questions } = data
-        console.log(license);
-    });
+//     {
+//         type: 'input',
+//         name: 'tableOfContents',
+//         message: "What would you like to include in your table of contents?",
+//     },
+//     {
+//         type: 'input',
+//         name: 'installation',
+//         message: "What is the process for installing the application?",
+//     },
+//     {
+//         type: 'input',
+//         name: 'use',
+//         message: "How is the application used?",
+//     },
+//     {
+//         type: 'input',
+//         name: 'license',
+//         message: "Which license was used?",
+//     },
+//     {
+//         type: 'input',
+//         name: 'contributions',
+//         message: "Were there any contributions from other developers or sources you consulted for this application?",
+//     },
+//     {
+//         type: 'input',
+//         name: 'tests',
+//         message: "If tests were run on the application, what were they and how were they conducted?",
+//     },
+//     {
+//         type: 'input',
+//         name: 'questions',
+//         message: "Which questions does this answer?",
+//     },
+]
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName)
-}
+writeToFile = (fileName, data) => {
+    fs.writeFile(fileName, JSON.stringify(data), err => {
+        console.log(err);
+    })
+};
+
 
 // TODO: Create a function to initialize app
-function init() {}
+init = async () => {
+
+  const answers = await inquirer
+    .prompt(questionPrompts)
+    // .then((data, err) => {
+    //     err ? console.log(err) : console.log('Success!')
+    //     const { title, tableOfContents, installation, use, license, contributions, tests, questions } = data
+    //     let answers = data
+    //     return answers
+    // });
+
+    const { title, tableOfContents, installation, use, license, contributions, tests, questions } = answers;
+
+    // console.log(title);
+
+    await writeToFile('Sample_README.md', answers);
+    
+    generateMarkdown(answers);
+}
 
 // Function call to initialize app
 init();
