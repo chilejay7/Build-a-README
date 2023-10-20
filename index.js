@@ -59,7 +59,7 @@ const questionPrompts = [
 
 // TODO: Create a function to write README file
 writeToFile = (fileName, data) => {
-    fs.writeFile(fileName, JSON.stringify(data), err => {
+    fs.writeFile(fileName, data, err => {
         console.log(err);
     })
 };
@@ -70,20 +70,11 @@ init = async () => {
 
   const answers = await inquirer
     .prompt(questionPrompts)
-    // .then((data, err) => {
-    //     err ? console.log(err) : console.log('Success!')
-    //     const { title, tableOfContents, installation, use, license, contributions, tests, questions } = data
-    //     let answers = data
-    //     return answers
-    // });
 
     const { title, tableOfContents, installation, use, license, contributions, tests, questions, email, username } = answers;
 
-    // console.log(title);
+    await writeToFile('Sample_README.md', generateMarkdown(answers));
 
-    await writeToFile('Sample_README.md', answers);
-    
-    generateMarkdown(answers);
 }
 
 // Function call to initialize app

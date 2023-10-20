@@ -51,7 +51,7 @@ ${questions}
 
 ## Contact Information 
 
-GitHub: ${username}
+GitHub: ${username}<br>
 Email: ${email}
 `
 return readMeText;
