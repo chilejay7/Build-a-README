@@ -1,38 +1,40 @@
-# New Project
+# License link Section
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
   ## Description
 
-  al;skdjf
+  a;sdlkfj
 
   ## Table of Contents 
 
-  No thank you 
+  a;sldkfj 
     
   ## Installation
 
-  al;ksdjf
+  aldkfj
 
   ## Usage
 
-  Use it
+  a;ldkfj
 
   ## License
 
+  This application is covered under the license linked below.  For further information regarding the license and its terms, please consult the official licensing documentation using the provided link.
+  
   [License: MIT](https://opensource.org/licenses/MIT)
 
   ## Contributions
 
-  al;skdjf
+  asdf
 
   ## Tests
 
-  none
+  asdf
 
   ## Questions for the Developer?
 
   Please contact me at:  
-  GitHub: alsd;kjd  
-  Email: a;sldfj
+  GitHub: asdf  
+  Email: asdf
   
