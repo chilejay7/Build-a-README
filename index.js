@@ -12,6 +12,11 @@ const questionPrompts = [
     },
     {
         type: 'input',
+        name: 'description',
+        message: "Please provide a description of your project / application.",
+    },
+    {
+        type: 'input',
         name: 'tableOfContents',
         message: "What would you like to include in your table of contents?",
     },
@@ -71,8 +76,9 @@ init = async () => {
   const answers = await inquirer
     .prompt(questionPrompts)
 
-    await writeToFile('Sample_README.md', generateMarkdown(answers));
+    // console.log(answers);
 
+    writeToFile('Sample_README.md', generateMarkdown(answers));
 }
 
 // Function call to initialize app
