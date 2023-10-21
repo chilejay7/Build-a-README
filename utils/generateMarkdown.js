@@ -1,7 +1,9 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 renderLicenseBadge = (license) => {
-  [![`License: ${license}`](`https://img.shields.io/badge/License-${license}-yellow.svg`)](`https://opensource.org/licenses/MIT`)
+  let badge = `[![License: ${license}](https://img.shields.io/badge/License-${license}-yellow.svg)](https://opensource.org/licenses/MIT)`
+
+  return badge;
 }
 
 // TODO: Create a function that returns the license link
@@ -35,7 +37,10 @@ generateMarkdown = ({ title, description, tableOfContents, installation, use, li
   }
 
   let readMeText =
+
   `# ${title}
+
+  ${renderLicenseBadge(license)}
 
   ## Description
 

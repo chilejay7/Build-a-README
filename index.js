@@ -76,8 +76,9 @@ init = async () => {
   const answers = await inquirer
     .prompt(questionPrompts)
 
-    await writeToFile('Sample_README.md', generateMarkdown(answers));
+    // console.log(answers);
 
+    writeToFile('Sample_README.md', generateMarkdown(answers));
 }
 
 // Function call to initialize app
