@@ -12,6 +12,11 @@ const questionPrompts = [
     },
     {
         type: 'input',
+        name: 'description',
+        message: "Please provide a description of your project / application.",
+    },
+    {
+        type: 'input',
         name: 'tableOfContents',
         message: "What would you like to include in your table of contents?",
     },

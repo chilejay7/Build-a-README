@@ -17,45 +17,61 @@ renderLicenseSection = (license) => {
 }
 
 // TODO: Create a function to generate markdown for README
-generateMarkdown = ({ title, tableOfContents, installation, use, license, contributions, tests, questions, email, username}) => {
-let readMeText =
-`# ${title}
+generateMarkdown = ({ title, description, tableOfContents, installation, use, license, contributions, tests, questions, email, username }) => {
 
-## Table of Contents 
+  // console.log(tableOfContents);
+  // console.log(tableOfContents.length);
 
-${tableOfContents} 
-  
-## Installation
+  let table = [tableOfContents];
+  console.log(table.length);
 
-${installation}
+  generateTable = () => {
+    if (table !== null || table !== undefined) {
+      for (let i = 0; i < table.length; i++) {
+        `[${table[i]}](##${table[i]})`
+        console.log(table[i]);
+      }
+    }
+  }
 
-## Use 
+  let readMeText =
+  `# ${title}
 
-${use}
+  ## Description
 
-## License
+  ${description}
 
-${license}
+  ## Table of Contents 
 
-## Contributions
+  ${tableOfContents} 
+    
+  ## Installation
 
-${contributions}
+  ${installation}
 
-## Tests
+  ## Usage
 
-${tests}
+  ${use}
 
-## Questions for the Developer? 
+  ## License
 
-${questions}
+  ${license}
 
-## Contact Information 
+  ## Contributions
 
-GitHub: ${username}<br>
-Email: ${email}
-`
-return readMeText;
-;
+  ${contributions}
+
+  ## Tests
+
+  ${tests}
+
+  ## Questions for the Developer?
+
+  Please contact me at:  
+  GitHub: ${username}  
+  Email: ${email}
+  `
+    return readMeText;
 }
 
 module.exports = generateMarkdown;
