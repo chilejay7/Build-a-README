@@ -4,16 +4,18 @@ renderLicenseBadge = (license) => {
   if (!license) {
     return ''
   } else {
-  let badge = `[![License: ${license}](https://img.shields.io/badge/License-${license}-yellow.svg)](https://opensource.org/licenses/${license})`
-
-  return badge;
+  return `[![License: ${license}](https://img.shields.io/badge/License-${license}-blue.svg)](https://opensource.org/licenses/${license})`
   }
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 renderLicenseLink = (license) => {
-
+  if (!license) {
+    return ''
+  } else {
+    return `[License: ${license}](https://opensource.org/licenses/${license})`
+  }
 }
 
 // TODO: Create a function that returns the license section of README
@@ -64,7 +66,7 @@ generateMarkdown = ({ title, description, tableOfContents, installation, use, li
 
   ## License
 
-  ${license}
+  ${renderLicenseLink(license)}
 
   ## Contributions
 
