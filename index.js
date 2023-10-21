@@ -31,9 +31,15 @@ const questionPrompts = [
         message: "Please describe how this application should be used.",
     },
     {
-        type: 'input',
+        type: 'list',
         name: 'license',
-        message: "Which license was used?",
+        message: "Please select the license used for this application.",
+        choices: [
+            {name: 'ISC', value: 'ISC'},
+            {name: 'PDDL', value: 'PDDL'},
+            {name: 'MIT', value: 'MIT'},
+            {name: 'ODbl', value: 'ODbl'},
+         ],
     },
     {
         type: 'input',
@@ -44,11 +50,6 @@ const questionPrompts = [
         type: 'input',
         name: 'tests',
         message: "If tests were run on the application, what were they and how should they be conducted?",
-    },
-        {
-        type: 'input',
-        name: 'questions',
-        message: "Questions for the developer?",
     },
     {
         type: 'input',
@@ -76,7 +77,7 @@ init = async () => {
   const answers = await inquirer
     .prompt(questionPrompts)
 
-    // console.log(answers);
+    console.log(answers);
 
     writeToFile('Sample_README.md', generateMarkdown(answers));
 }
