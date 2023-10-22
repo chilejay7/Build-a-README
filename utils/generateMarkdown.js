@@ -10,8 +10,6 @@ renderLicenseBadge = (license) => {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-
-
 renderLicenseLink = (license) => {
   if (!license) {
     return ''
@@ -31,9 +29,9 @@ renderLicenseSection = (license) => {
 // This function is used to generate the Table of Contents from the array created through the inquirer prompt.
 generateTable = (tableOfContents) => {
   if (tableOfContents !== null || tableOfContents !== undefined) {
+    // The empty variable is needed to hold and return all of the values created through the for loop.  The values are created following the link formatting needed for the markdown language.  The actual link itself has to be lowercase, which is why the toLowerCase method is required.
     let table = ''
     for (let i = 0; i < tableOfContents.length; i++) {
-      console.log(tableOfContents[i]);
       table += `[${tableOfContents[i]}](#${tableOfContents[i].toLowerCase()})  
       `
     }

@@ -69,18 +69,17 @@ const questionPrompts = [
 // TODO: Create a function to write README file
 writeToFile = (fileName, data) => {
     fs.writeFile(fileName, data, err => {
-        console.log(err);
+        // console.log(err);
     })
 };
 
-
 // TODO: Create a function to initialize app
+// An async function was neeeded to force the script to wait for the prompts to complete. When initialized without an async function
+// it was prompting for the first question and then continuing to run the following functions.
 init = async () => {
 
   const answers = await inquirer
     .prompt(questionPrompts)
-
-    console.log(answers);
 
     await writeToFile('Sample_README.md', generateMarkdown(answers));
 }
