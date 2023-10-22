@@ -41,4 +41,4 @@ None
 If you have any questions, please contact me using the information provided below:  
   
 GitHub: chilejay7  
-Email: cody@email.com
+Email: codyburk7@gmail.com
