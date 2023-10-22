@@ -4,23 +4,23 @@
 
   ## Description
 
-  Description goes here
+  This is an exmaple
 
   ## Table of Contents 
 
   [Installation](#installation)  
-      [Usage](#usage)  
       [License](#license)  
-      [Questions for the Developer?](#questions for the developer?)  
+      [Contributions](#contributions)  
+      [Questions](#questions)  
       
     
   ## Installation
 
-  Install using the instructions
+  Install
 
   ## Usage
 
-  Use here
+  Use according to information provided
 
   ## License
 

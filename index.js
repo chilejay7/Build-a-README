@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generate = require('./utils/generateMarkdown');
 
-const tableArray = ['Description', 'Installation', 'Usage', 'License', 'Contributions', 'Tests', 'Questions for the Developer?'];
+const tableArray = ['Description', 'Installation', 'Usage', 'License', 'Contributions', 'Tests', 'Questions'];
 
 // TODO: Create an array of questions for user input
 const questionPrompts = [
@@ -81,7 +81,7 @@ init = async () => {
   const answers = await inquirer
     .prompt(questionPrompts)
 
-    await writeToFile('Sample_README.md', generateMarkdown(answers));
+    writeToFile('Sample_README.md', generateMarkdown(answers));
 }
 
 // Function call to initialize app
