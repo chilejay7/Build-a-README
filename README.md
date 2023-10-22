@@ -4,7 +4,7 @@
 
 A professional README is critical to provide important information about a developer's application and how it should be used.  Providing clear and concise descriptions, usage and installation instructions, and how to communicate with the application's developer are necessary components of any project and should not be overlooked.  Build a README is a command-line application created using Node.js.  Running the index.js file will prompt the developer for information related to their application and use the input provided to generate a professional README complete with the sections and markup required.
 
-![README Application](./README_App.gif)
+![README Application](./README_Application.gif)
 
 ## Table of Contents 
 
@@ -21,6 +21,8 @@ The Build a README application can be installed by cloning the repository to you
 ## Usage
 
 The application is initialized by running the node index.js command through the terminal.  When the index.js file is called it runs the inquirer prompts to retrieve input from the developer about their project.  The table of contents prompt is used differently than other prompts within the application.  A checkbox input form is displayed in order to capture the input within an array that can easily be iterated over to generate the separate items.  Options within this section can be selected using the space bar and arrow keys to navigate.  When all information has been entered, the README file is generated and includes a badge of the license used in the application.
+
+A link to the video demonstrating the appliation's use can be found here: [Walkthrough Video](https://drive.google.com/file/d/1Pth08utRYuaB0cBjeFll2_lQc6dhUfsm/view?usp=sharing)
 
 ## License
 
