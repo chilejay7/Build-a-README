@@ -28,23 +28,21 @@ renderLicenseSection = (license) => {
   ${renderLicenseLink(license)}`
 }
 
+// This function is used to generate the Table of Contents from the array created through the inquirer prompt.
+generateTable = (tableOfContents) => {
+  if (tableOfContents !== null || tableOfContents !== undefined) {
+    let table = ''
+    for (let i = 0; i < tableOfContents.length; i++) {
+      console.log(tableOfContents[i]);
+      table += `[${tableOfContents[i]}](#${tableOfContents[i].toLowerCase()})  
+      `
+    }
+    return table
+  }
+}
+
 // TODO: Create a function to generate markdown for README
 generateMarkdown = ({ title, description, tableOfContents, installation, use, license, contributions, tests, questions, email, username }) => {
-
-  // console.log(tableOfContents);
-  // console.log(tableOfContents.length);
-
-  let table = [tableOfContents];
-  console.log(table.length);
-
-  generateTable = () => {
-    if (table !== null || table !== undefined) {
-      for (let i = 0; i < table.length; i++) {
-        `[${table[i]}](##${table[i]})`
-        console.log(table[i]);
-      }
-    }
-  }
 
   let readMeText =
 
@@ -58,7 +56,7 @@ generateMarkdown = ({ title, description, tableOfContents, installation, use, li
 
   ## Table of Contents 
 
-  ${tableOfContents} 
+  ${generateTable(tableOfContents)}
     
   ## Installation
 
