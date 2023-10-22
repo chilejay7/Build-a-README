@@ -44,45 +44,45 @@ generateMarkdown = ({ title, description, tableOfContents, installation, use, li
 
   let readMeText =
 
-  `# ${title}
+`# ${title}
 
-  ${renderLicenseBadge(license)}
+${renderLicenseBadge(license)}
 
-  ## Description
+## Description
 
-  ${description}
+${description}
 
-  ## Table of Contents 
+## Table of Contents 
 
-  ${generateTable(tableOfContents)}
-    
-  ## Installation
+${generateTable(tableOfContents)}
+  
+## Installation
 
-  ${installation}
+${installation}
 
-  ## Usage
+## Usage
 
-  ${use}
+${use}
 
-  ## License
+## License
 
-  ${renderLicenseSection(license)}
+${renderLicenseSection(license)}
 
-  ## Contributions
+## Contributions
 
-  ${contributions}
+${contributions}
 
-  ## Tests
+## Tests
 
-  ${tests}
+${tests}
 
-  ## Questions for the Developer?
+## Questions
 
-  If you have any questions, please contact me using the information provided below:  
-    
-  GitHub: ${username}  
-  Email: ${email}
-  `
+If you have any questions, please contact me using the information provided below:  
+  
+GitHub: ${username}  
+Email: ${email}
+`
     return readMeText;
 }
 
