@@ -3,6 +3,8 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generate = require('./utils/generateMarkdown');
 
+const tableArray = ['Description', 'Installation', 'Usage', 'License', 'Contributions', 'Tests', 'Questions for the Developer?'];
+
 // TODO: Create an array of questions for user input
 const questionPrompts = [
     {
@@ -16,9 +18,10 @@ const questionPrompts = [
         message: "Please provide a description of your project / application.",
     },
     {
-        type: 'input',
         name: 'tableOfContents',
-        message: "What would you like to include in your table of contents?",
+        type: 'checkbox',
+        message: "Please select the sections you would like to include in your table of contents.",
+        choices: tableArray
     },
     {
         type: 'input',
@@ -79,7 +82,7 @@ init = async () => {
 
     console.log(answers);
 
-    writeToFile('Sample_README.md', generateMarkdown(answers));
+    await writeToFile('Sample_README.md', generateMarkdown(answers));
 }
 
 // Function call to initialize app
